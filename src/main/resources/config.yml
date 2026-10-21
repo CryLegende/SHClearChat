@@ -1,0 +1,9 @@
+messages:
+  no-permission: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
+  no-permission-others: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
+  only-players: "&7&l« &c&lSH &8&l» &fCette commande ne peut être utilisée que par un joueur."
+  player-not-found: "&7&l« &c&lSH &8&l» &fJoueur non trouvé."
+  chat-cleared-broadcast: "&7&l« &d&lSH &8&l» &fLe chat a été nettoyé par &d%player%"
+  self-chat-cleared: "&7&l« &a&lSH &8&l» &fVous avez nettoyé votre chat."
+  target-chat-cleared: "&7&l« &d&lSH &8&l» &fVotre chat a été nettoyé par &d%player%"
+  cleared-other-chat: "&7&l« &a&lSH &8&l» &fVous avez nettoyé le chat de &a%target%"
