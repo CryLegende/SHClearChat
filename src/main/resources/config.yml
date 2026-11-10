@@ -1,3 +1,22 @@
+# SHClearChat : nettoie le chat en envoyant 100 lignes vides.
+#
+# Commande (alias /cc) :
+#   /clearchat                Nettoie le chat de tous les joueurs (sauf shclearchat.bypass) et l'annonce.
+#   /clearchat self           Nettoie son propre chat.
+#   /clearchat <joueur>       Nettoie le chat d'un joueur.
+#
+# Permissions :
+#   shclearchat.use           /clearchat (op par défaut).
+#   shclearchat.bypass        Chat épargné par le nettoyage général (op par défaut).
+#   clearchat.other           /clearchat <joueur>.
+
+# Avec SHNetwork, le nettoyage général atteint les joueurs de tous les serveurs du réseau, et /clearchat <joueur>
+# trouve un joueur connecté sur un autre serveur. Sans SHNetwork, ou à false, seuls les joueurs de ce serveur sont
+# atteints. Se lit au démarrage.
+reseau:
+  actif: true
+
+# Messages. Codes couleur avec &. %player% : joueur qui a nettoyé le chat ; %target% : joueur dont le chat a été nettoyé.
 messages:
   no-permission: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
   no-permission-others: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."

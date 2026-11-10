@@ -18,6 +18,8 @@ Nettoie le chat de tout le serveur, le sien ou celui d'un autre joueur (/clearch
 
 Utilisé sur : **Opale · Lobby**.
 
+Avec **SHNetwork** (facultatif), le nettoyage général atteint les joueurs de tous les serveurs du réseau et `/clearchat <joueur>` trouve un joueur connecté sur un autre serveur. Sans SHNetwork, ou avec `reseau.actif: false`, seuls les joueurs du serveur sont atteints.
+
 ## Commandes
 
 | Commande | Alias | Description | Permission |
@@ -40,6 +42,8 @@ Fichiers par défaut repris du serveur (secrets remplacés par `CHANGE_ME`). Cli
 plugins/SHClearChat/
 └── <a href="src/main/resources/config.yml">config.yml</a>
 </pre>
+
+La clé `reseau.actif` (par défaut `true`) active l'envoi vers les autres serveurs quand SHNetwork est présent. Elle se lit au démarrage.
 
 ## Compilation
 
