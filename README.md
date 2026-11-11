@@ -24,15 +24,20 @@ Avec **SHNetwork** (facultatif), le nettoyage général atteint les joueurs de t
 
 | Commande | Alias | Description | Permission |
 |---|---|---|---|
-| `/clearchat` | `/cc` | Commande pour nettoyer le chat | — |
+| `/clearchat` | `/cc` | Nettoie le chat de tous les joueurs (sauf `shclearchat.bypass`) | `shclearchat.use` |
+| `/clearchat self` | `/cc self` | Nettoie son propre chat | — (tous les joueurs) |
+| `/clearchat <joueur>` | `/cc <joueur>` | Nettoie le chat d'un joueur | `shclearchat.other` |
+| `/shclearchat reload` | — | Relit `config.yml` et `messages.yml` ; si l'un est invalide, rien n'est remplacé et le message donne le fichier et l'erreur | `shclearchat.admin.reload` |
 
 ## Permissions
 
 | Permission | Description | Par défaut |
 |---|---|---|
-| `shclearchat.use` | Permet d'utiliser la commande clearchat | `op` |
+| `shclearchat.use` | Permet de nettoyer le chat de tout le monde avec /clearchat | `op` |
 | `shclearchat.bypass` | Permet d'éviter le nettoyage du chat global | `op` |
-| `shclearchat.other` | Permet de nettoyer le chat d'autres joueurs | `op` |
+| `shclearchat.other` | Permet de nettoyer le chat d'un autre joueur avec /clearchat <joueur> | `op` |
+| `shclearchat.admin` | Toutes les sous-commandes de /shclearchat | `op` |
+| `shclearchat.admin.reload` | Utiliser /shclearchat reload | `op` |
 
 ## Configuration
 
@@ -40,8 +45,11 @@ Fichiers par défaut repris du serveur (secrets remplacés par `CHANGE_ME`). Cli
 
 <pre>
 plugins/SHClearChat/
-└── <a href="src/main/resources/config.yml">config.yml</a>
+├── <a href="src/main/resources/config.yml">config.yml</a>
+└── <a href="src/main/resources/messages.yml">messages.yml</a>
 </pre>
+
+Au premier démarrage avec `messages.yml` absent, il est créé à partir de l'ancienne section `messages:` de `config.yml` (textes déjà personnalisés conservés) ; cette section n'est plus lue ensuite.
 
 La clé `reseau.actif` (par défaut `true`) active l'envoi vers les autres serveurs quand SHNetwork est présent. Elle se lit au démarrage.
 

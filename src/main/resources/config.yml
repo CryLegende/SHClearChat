@@ -1,28 +1,23 @@
 # SHClearChat : nettoie le chat en envoyant 100 lignes vides.
 #
-# Commande (alias /cc) :
-#   /clearchat                Nettoie le chat de tous les joueurs (sauf shclearchat.bypass) et l'annonce.
-#   /clearchat self           Nettoie son propre chat.
+# Commandes :
+#   /clearchat (alias /cc)    Nettoie le chat de tous les joueurs (sauf shclearchat.bypass) et l'annonce.
+#   /clearchat self           Nettoie son propre chat. Aucune permission : tous les joueurs peuvent l'utiliser.
 #   /clearchat <joueur>       Nettoie le chat d'un joueur.
+#   /shclearchat reload       Relit config.yml et messages.yml. Si l'un des deux est invalide, rien n'est remplacé
+#                             et le message donne le fichier et l'erreur. reseau.actif demande un redémarrage.
 #
-# Permissions :
-#   shclearchat.use           /clearchat (op par défaut).
-#   shclearchat.bypass        Chat épargné par le nettoyage général (op par défaut).
-#   clearchat.other           /clearchat <joueur>.
+# Permissions (op par défaut) :
+#   shclearchat.use            /clearchat (nettoyage général)
+#   shclearchat.bypass         Chat épargné par le nettoyage général
+#   shclearchat.other          /clearchat <joueur>
+#   shclearchat.admin          Toutes les sous-commandes de /shclearchat
+#   shclearchat.admin.reload   /shclearchat reload
+#
+# Les textes sont dans messages.yml.
 
 # Avec SHNetwork, le nettoyage général atteint les joueurs de tous les serveurs du réseau, et /clearchat <joueur>
 # trouve un joueur connecté sur un autre serveur. Sans SHNetwork, ou à false, seuls les joueurs de ce serveur sont
 # atteints. Se lit au démarrage.
 reseau:
   actif: true
-
-# Messages. Codes couleur avec &. %player% : joueur qui a nettoyé le chat ; %target% : joueur dont le chat a été nettoyé.
-messages:
-  no-permission: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
-  no-permission-others: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
-  only-players: "&7&l« &c&lSH &8&l» &fCette commande ne peut être utilisée que par un joueur."
-  player-not-found: "&7&l« &c&lSH &8&l» &fJoueur non trouvé."
-  chat-cleared-broadcast: "&7&l« &d&lSH &8&l» &fLe chat a été nettoyé par &d%player%"
-  self-chat-cleared: "&7&l« &a&lSH &8&l» &fVous avez nettoyé votre chat."
-  target-chat-cleared: "&7&l« &d&lSH &8&l» &fVotre chat a été nettoyé par &d%player%"
-  cleared-other-chat: "&7&l« &a&lSH &8&l» &fVous avez nettoyé le chat de &a%target%"

@@ -1,0 +1,22 @@
+# Messages de SHClearChat. Codes couleur avec &.
+# %player% : joueur qui a nettoyé le chat, %target% : joueur dont le chat a été nettoyé.
+
+# Commande refusée faute de permission.
+no-permission: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
+no-permission-others: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
+
+only-players: "&7&l« &c&lSH &8&l» &fCette commande ne peut être utilisée que par un joueur."
+player-not-found: "&7&l« &c&lSH &8&l» &fJoueur non trouvé."
+chat-cleared-broadcast: "&7&l« &d&lSH &8&l» &fLe chat a été nettoyé par &d%player%"
+self-chat-cleared: "&7&l« &a&lSH &8&l» &fVous avez nettoyé votre chat."
+target-chat-cleared: "&7&l« &d&lSH &8&l» &fVotre chat a été nettoyé par &d%player%"
+cleared-other-chat: "&7&l« &a&lSH &8&l» &fVous avez nettoyé le chat de &a%target%"
+
+# /shclearchat sans argument ou avec une sous-commande inconnue. %subcommands% : sous-commandes permises à l'expéditeur.
+admin-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/shclearchat <%subcommands%>"
+
+# /shclearchat reload réussi.
+reload-success: "&7&l« &a&lSH &8&l» &7Configuration &arechargée&7. &8(reseau.actif demande un redémarrage)"
+
+# /shclearchat reload refusé : %error% = fichier et cause. La configuration précédente reste en place.
+reload-error: "&7&l« &c&lSH &8&l» &7Rechargement &crefusé&7 (%error%). La configuration précédente reste en place."

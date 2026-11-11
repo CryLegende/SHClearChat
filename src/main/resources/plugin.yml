@@ -9,16 +9,28 @@ softdepend: [SHNetwork]
 commands:
   clearchat:
     description: Commande pour nettoyer le chat
-    usage: /clearchat [self|player]
+    usage: /clearchat [self|joueur]
     aliases: [cc]
+  shclearchat:
+    description: Administration de SHClearChat.
+    usage: /shclearchat reload
+    permission: shclearchat.admin.reload
 
 permissions:
   shclearchat.use:
-    description: Permet d'utiliser la commande clearchat
+    description: Permet de nettoyer le chat de tout le monde avec /clearchat
     default: op
   shclearchat.bypass:
     description: Permet d'éviter le nettoyage du chat global
     default: op
   shclearchat.other:
-    description: Permet de nettoyer le chat d'autres joueurs
+    description: Permet de nettoyer le chat d'un autre joueur avec /clearchat <joueur>
+    default: op
+  shclearchat.admin:
+    description: Toutes les sous-commandes de /shclearchat
+    default: op
+    children:
+      shclearchat.admin.reload: true
+  shclearchat.admin.reload:
+    description: Utiliser /shclearchat reload
     default: op
